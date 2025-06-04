@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Robert Sargent & Son</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h1, h2 { color: #2E8B57; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+    th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+    th { background-color: #f4f4f4; }
+    input[type="number"] { width: 60px; }
+    #totalPrice { font-weight: bold; margin-top: 20px; font-size: 18px; }
+    .submit-btn { padding: 10px 20px; background-color: #2E8B57; color: white; border: none; cursor: pointer; }
+    .submit-btn:hover { background-color: #246B47; }
+  </style>
+</head>
+<body>
+  <h1>Robert Sargent & Son - Fresh Milk, Fruits & Vegetables</h1>
+
+  <h2>Fruit & Veg Boxes</h2>
+  <table>
+    <thead><tr><th>Box Name</th><th>Contents</th><th>Price</th><th>Quantity</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Mini Market Box</td>
+        <td>Milk + 5 fruits & 3 veg</td>
+        <td>£10.99</td>
+        <td><input id="miniMarketBox" name="miniMarketBox" type="number" min="0" value="0" /></td>
+      </tr>
+      <tr>
+        <td>Family Fresh Box</td>
+        <td>Milk + 10 fruits/veg + eggs</td>
+        <td>£17.99</td>
+        <td><input id="familyFreshBox" name="familyFreshBox" type="number" min="0" value="0" /></td>
+      </tr>
+      <tr>
+        <td>Just Veggie Box</td>
+        <td>10 mixed seasonal veg</td>
+        <td>£11.99</td>
+        <td><input id="justVeggieBox" name="justVeggieBox" type="number" min="0" value="0" /></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div id="totalPrice">TOTAL: £0.00</div>
+  <button class="submit-btn" onclick="calculateTotal()">Submit Order</button>
+
+  <script>
+    function calculateTotal() {
+      let total = 0;
+      total += document.getElementById("miniMarketBox").value * 10.99;
+      total += document.getElementById("familyFreshBox").value * 17.99;
+      total += document.getElementById("justVeggieBox").value * 11.99;
+      document.getElementById("totalPrice").innerText = "TOTAL: £" + total.toFixed(2);
+    }
+  </script>
+</body>
+</html>

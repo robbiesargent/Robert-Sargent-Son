@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Place Order</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><h1>Place Your Order</h1></header>
+<main>
+  <form onsubmit="submitOrder(event)">
+    <label>Name: <input type="text" required /></label><br/><br/>
+    <label>Address: <textarea required></textarea></label><br/><br/>
+    <label>Postcode: <input type="text" required /></label><br/><br/>
+    <label>Email: <input type="email" required /></label><br/><br/>
+    <button type="submit">Submit Order</button>
+  </form>
+  <p id="confirm"></p>
+</main>
+<script>
+function submitOrder(event) {
+  event.preventDefault();
+  localStorage.removeItem("cart");
+  document.getElementById("confirm").textContent = "✅ Order submitted successfully!";
+}
+</script>
+</body>
+</html>

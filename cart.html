@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><h1>Your Shopping Cart</h1></header>
+<main>
+  <ul id="cart-items"></ul>
+  <p id="total"></p>
+  <a href="order.html"><button>Proceed to Order</button></a>
+</main>
+<script>
+const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+const list = document.getElementById("cart-items");
+let total = 0;
+cart.forEach((item, i) => {
+  const li = document.createElement("li");
+  li.textContent = item.name + " - £" + item.price.toFixed(2);
+  list.appendChild(li);
+  total += item.price;
+});
+document.getElementById("total").textContent = "Total: £" + total.toFixed(2);
+</script>
+</body>
+</html>

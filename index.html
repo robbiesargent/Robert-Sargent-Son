@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fresh Local Delivery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Fresh Milk & Veg Delivery</h1>
+  <p>Delivering to Crosby, Waterloo & Blundellsands</p>
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="cart.html">Shopping Cart</a> |
+    <a href="order.html">Order Form</a> |
+    <a href="admin.html">Admin Panel</a>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <h2>Products</h2>
+    <div class="grid" id="product-list">
+      <!-- Product items will be inserted by JavaScript -->
+    </div>
+  </section>
+
+  <section>
+    <h2>Check Delivery Area</h2>
+    <div class="postcode-checker">
+      <input type="text" id="postcode" placeholder="Enter your postcode" />
+      <button onclick="checkPostcode()">Check</button>
+      <p id="result"></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Contact: freshdelivery@example.com | Phone: 01234 567890</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
